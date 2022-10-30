@@ -1,0 +1,12 @@
+function callWebService(){
+  
+  //Call the webservice
+  var response = UrlFetchApp.fetch('http://your.ip.addres:4567/plots');
+  Logger.log(response.getContentText());
+  // your code based on response
+}
+
+function doGet(e) {
+  callWebService() 
+  return HtmlService.createHtmlOutput("<html><body><h1>Hi there</h1></body></html>");
+  }
